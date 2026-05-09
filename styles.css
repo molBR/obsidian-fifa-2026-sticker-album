@@ -90,7 +90,14 @@
 	border-right: 1px solid var(--text-faint);
 }
 
-.wcc-filter-btn:hover {
+@media (hover: hover) {
+	.wcc-filter-btn:hover {
+		background: var(--background-modifier-hover);
+		color: var(--text-normal);
+	}
+}
+
+.wcc-filter-btn:active {
 	background: var(--background-modifier-hover);
 	color: var(--text-normal);
 }
@@ -123,7 +130,13 @@
 	border-bottom: 1px solid var(--text-faint);
 }
 
-.wcc-section-header:hover {
+@media (hover: hover) {
+	.wcc-section-header:hover {
+		background: var(--background-modifier-hover);
+	}
+}
+
+.wcc-section-header:active {
 	background: var(--background-modifier-hover);
 }
 
@@ -172,7 +185,13 @@
 	background: var(--background-primary);
 }
 
-.wcc-team-header:hover {
+@media (hover: hover) {
+	.wcc-team-header:hover {
+		background: var(--background-modifier-hover);
+	}
+}
+
+.wcc-team-header:active {
 	background: var(--background-modifier-hover);
 }
 
@@ -224,7 +243,14 @@
 	min-height: 44px;
 }
 
-.wcc-card:hover {
+@media (hover: hover) {
+	.wcc-card:hover {
+		background: var(--background-modifier-hover);
+		border-color: var(--text-faint);
+	}
+}
+
+.wcc-card:active {
 	background: var(--background-modifier-hover);
 	border-color: var(--text-faint);
 }
