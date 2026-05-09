@@ -113,7 +113,7 @@
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	padding: 7px 10px;
+	padding: 11px 10px;
 	cursor: pointer;
 	background: var(--background-secondary);
 	user-select: none;
@@ -165,7 +165,7 @@
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	padding: 6px 10px;
+	padding: 11px 10px;
 	cursor: pointer;
 	user-select: none;
 	background: var(--background-primary);
@@ -203,9 +203,9 @@
 /* ── Cards grid ─────────────────────────────────────── */
 .wcc-cards {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-	gap: 2px;
-	padding: 6px 10px;
+	grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+	gap: 4px;
+	padding: 8px 10px;
 	background: var(--background-secondary);
 	border-top: 1px dashed var(--background-modifier-border);
 }
@@ -213,13 +213,14 @@
 .wcc-card {
 	display: flex;
 	align-items: center;
-	gap: 4px;
-	padding: 3px 6px;
+	gap: 6px;
+	padding: 10px 8px;
 	border: 1px solid transparent;
 	border-radius: 0;
 	cursor: pointer;
 	user-select: none;
 	background: transparent;
+	min-height: 44px;
 }
 
 .wcc-card:hover {
@@ -236,15 +237,15 @@
 }
 
 .wcc-card-star {
-	font-size: 0.78em;
+	font-size: 0.85em;
 	font-weight: bold;
-	min-width: 30px;
+	min-width: 32px;
 	letter-spacing: -0.5px;
 	flex-shrink: 0;
 }
 
 .wcc-card-label {
-	font-size: 0.82em;
+	font-size: 0.88em;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
