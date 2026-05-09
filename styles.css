@@ -84,6 +84,7 @@
 	font-size: 0.78em;
 	letter-spacing: 0.05em;
 	cursor: pointer;
+	touch-action: manipulation;
 }
 
 .wcc-filter-btn:last-child {
@@ -128,6 +129,7 @@
 	font-weight: bold;
 	letter-spacing: 0.06em;
 	border-bottom: 1px solid var(--text-faint);
+	touch-action: manipulation;
 }
 
 @media (hover: hover) {
@@ -183,6 +185,7 @@
 	cursor: pointer;
 	user-select: none;
 	background: var(--background-primary);
+	touch-action: manipulation;
 }
 
 @media (hover: hover) {
@@ -241,6 +244,7 @@
 	user-select: none;
 	background: transparent;
 	min-height: 44px;
+	touch-action: manipulation;
 }
 
 @media (hover: hover) {

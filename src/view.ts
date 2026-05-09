@@ -209,9 +209,12 @@ export class WorldCupCardsView extends ItemView {
 			};
 
 			let holdTimer: number | undefined;
+			let startX = 0, startY = 0;
 
 			cardEl.addEventListener('pointerdown', (e) => {
 				e.preventDefault();
+				startX = e.clientX;
+				startY = e.clientY;
 				holdTimer = window.setTimeout(() => { holdTimer = undefined; openEditor(); }, 500);
 			});
 
@@ -229,7 +232,9 @@ export class WorldCupCardsView extends ItemView {
 				this.render();
 			});
 			cardEl.addEventListener('pointercancel', cancelHold);
-			cardEl.addEventListener('pointermove',   cancelHold);
+			cardEl.addEventListener('pointermove', (e) => {
+				if (Math.hypot(e.clientX - startX, e.clientY - startY) > 10) cancelHold();
+			});
 		}
 	}
 }
