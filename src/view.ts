@@ -157,6 +157,10 @@ export class WorldCupCardsView extends ItemView {
 				}
 			}
 		}
+
+		// ── Footer ──────────────────────────────────────────
+		const footer = contentEl.createDiv('wcc-footer');
+		footer.createSpan({ text: `v${this.plugin.manifest.version}`, cls: 'wcc-version' });
 	}
 
 	renderTeam(parent: HTMLElement, team: TeamDef, filteredCards: CardDef[] | null = null) {

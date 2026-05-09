@@ -251,3 +251,14 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+/* ── Footer ─────────────────────────────────────────── */
+.wcc-footer {
+	margin-top: 16px;
+	text-align: right;
+}
+
+.wcc-version {
+	font-size: 0.75em;
+	color: var(--text-faint);
+}
