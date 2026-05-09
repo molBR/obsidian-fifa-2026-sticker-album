@@ -1,7 +1,7 @@
 {
 	"id": "world-cup-cards",
 	"name": "World Cup 2026 Cards",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
 	"description": "Track your FIFA World Cup 2026 Panini sticker collection.",
 	"author": "Pedro Vallese (Coding Giant Codes)",
