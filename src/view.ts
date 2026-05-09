@@ -30,11 +30,11 @@ export class WorldCupCardsView extends ItemView {
 	}
 
 	getViewType() { return VIEW_TYPE_WCC; }
-	getDisplayText() { return 'World Cup 2026 Cards'; }
+	getDisplayText() { return 'World Cup 2026 cards'; }
 	getIcon() { return 'trophy'; }
 
-	async onOpen() { this.render(); }
-	async onClose() { this.contentEl.empty(); }
+	onOpen(): Promise<void> { this.render(); return Promise.resolve(); }
+	onClose(): Promise<void> { this.contentEl.empty(); return Promise.resolve(); }
 
 	private groupLabel(group: string): string {
 		return group === 'Special' ? '[ SPECIAL ]' : `[ GROUP ${group} ]`;
@@ -67,7 +67,7 @@ export class WorldCupCardsView extends ItemView {
 
 		// ── Header ──────────────────────────────────────────
 		const header = contentEl.createDiv('wcc-header');
-		header.createEl('h2', { text: 'FIFA WORLD CUP 2026 // CARDS' });
+		header.createEl('h2', { text: 'FIFA World Cup 2026 // Cards' });
 		const overallRow = header.createDiv('wcc-overall-row');
 		overallRow.createSpan({ text: asciiBar(collectedCards, totalCards, 20), cls: 'wcc-ascii-bar' });
 		overallRow.createSpan({ text: ` ${collectedCards}/${totalCards}`, cls: 'wcc-overall-label' });
@@ -221,7 +221,7 @@ export class WorldCupCardsView extends ItemView {
 				const cur = this.plugin.data[card.id] ?? 0;
 				if (cur > 1) { openEditor(); return; }
 				this.plugin.data[card.id] = cur === 0 ? 1 : 0;
-				this.plugin.savePluginData();
+				void this.plugin.savePluginData();
 				this.render();
 			});
 			cardEl.addEventListener('pointercancel', cancelHold);
@@ -237,7 +237,7 @@ class CardCountModal extends Modal {
 		app: App,
 		count: number,
 		private label: string,
-		private onSave: (n: number) => void,
+		private onSave: (n: number) => Promise<void>,
 	) {
 		super(app);
 		this.count = count;
@@ -261,9 +261,9 @@ class CardCountModal extends Modal {
 
 		new Setting(this.contentEl)
 			.addButton(btn => btn
-				.setButtonText('[ SAVE ]')
+				.setButtonText('Save')
 				.setCta()
-				.onClick(() => { this.onSave(this.count); this.close(); })
+				.onClick(async () => { await this.onSave(this.count); this.close(); })
 			);
 	}
 
