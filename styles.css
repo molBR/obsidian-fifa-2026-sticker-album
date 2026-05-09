@@ -1,8 +1,251 @@
-/*
+/* ── Base ────────────────────────────────────────────── */
+.wcc-container {
+	padding: 16px;
+	max-width: 860px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	font-family: var(--font-monospace, 'Courier New', monospace);
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+/* ── Header ─────────────────────────────────────────── */
+.wcc-header {
+	margin-bottom: 16px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid var(--text-faint);
+}
 
-If your plugin does not need CSS, delete this file.
+.wcc-header h2 {
+	margin: 0 0 10px 0;
+	font-size: 1.1em;
+	font-weight: bold;
+	letter-spacing: 0.08em;
+	font-family: inherit;
+}
 
-*/
+.wcc-overall-row {
+	display: flex;
+	align-items: center;
+	gap: 0;
+	margin-bottom: 0;
+}
+
+.wcc-ascii-bar {
+	color: #4ade80;
+	font-size: 0.85em;
+	letter-spacing: -1px;
+}
+
+.wcc-overall-label {
+	color: var(--text-muted);
+	font-size: 0.85em;
+}
+
+/* ── Search ──────────────────────────────────────────── */
+.wcc-search {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	padding: 5px 8px;
+	border: 1px solid var(--text-faint);
+	border-radius: 0;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-family: inherit;
+	font-size: 0.88em;
+	box-sizing: border-box;
+}
+
+.wcc-search:focus {
+	outline: none;
+	border-color: #4ade80;
+}
+
+.wcc-search::placeholder {
+	color: var(--text-faint);
+}
+
+/* ── Filter toggles ──────────────────────────────────── */
+.wcc-filter-bar {
+	display: flex;
+	gap: 0;
+	margin-top: 6px;
+}
+
+.wcc-filter-btn {
+	flex: 1;
+	padding: 4px 6px;
+	border: 1px solid var(--text-faint);
+	border-right: none;
+	border-radius: 0;
+	background: var(--background-primary);
+	color: var(--text-muted);
+	font-family: inherit;
+	font-size: 0.78em;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+}
+
+.wcc-filter-btn:last-child {
+	border-right: 1px solid var(--text-faint);
+}
+
+.wcc-filter-btn:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.wcc-filter-btn.active {
+	background: #4ade80;
+	color: #000;
+	border-color: #4ade80;
+	font-weight: bold;
+}
+
+/* ── Group sections ──────────────────────────────────── */
+.wcc-section {
+	margin-bottom: 4px;
+	border: 1px solid var(--text-faint);
+	border-radius: 0;
+	overflow: hidden;
+}
+
+.wcc-section-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 10px;
+	cursor: pointer;
+	background: var(--background-secondary);
+	user-select: none;
+	font-weight: bold;
+	letter-spacing: 0.06em;
+	border-bottom: 1px solid var(--text-faint);
+}
+
+.wcc-section-header:hover {
+	background: var(--background-modifier-hover);
+}
+
+.wcc-chevron {
+	font-size: 0.82em;
+	min-width: 28px;
+	color: #4ade80;
+}
+
+.wcc-group-name {
+	flex: 1;
+	font-size: 0.88em;
+}
+
+.wcc-group-count {
+	font-size: 0.82em;
+	color: var(--text-muted);
+	font-weight: normal;
+}
+
+/* ── Teams list ─────────────────────────────────────── */
+.wcc-teams {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	background: var(--background-primary);
+}
+
+.wcc-team {
+	border: none;
+	border-bottom: 1px dashed var(--background-modifier-border);
+}
+
+.wcc-team:last-child {
+	border-bottom: none;
+}
+
+.wcc-team-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 10px;
+	cursor: pointer;
+	user-select: none;
+	background: var(--background-primary);
+}
+
+.wcc-team-header:hover {
+	background: var(--background-modifier-hover);
+}
+
+.wcc-team-header.complete .wcc-team-name {
+	color: #4ade80;
+}
+
+.wcc-flag {
+	font-size: 1.1em;
+	line-height: 1;
+}
+
+.wcc-team-name {
+	flex: 1;
+	font-size: 0.88em;
+}
+
+.wcc-team-progress {
+	display: flex;
+	align-items: center;
+	gap: 0;
+}
+
+.wcc-team-count {
+	font-size: 0.78em;
+	color: var(--text-muted);
+}
+
+/* ── Cards grid ─────────────────────────────────────── */
+.wcc-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+	gap: 2px;
+	padding: 6px 10px;
+	background: var(--background-secondary);
+	border-top: 1px dashed var(--background-modifier-border);
+}
+
+.wcc-card {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 3px 6px;
+	border: 1px solid transparent;
+	border-radius: 0;
+	cursor: pointer;
+	user-select: none;
+	background: transparent;
+}
+
+.wcc-card:hover {
+	background: var(--background-modifier-hover);
+	border-color: var(--text-faint);
+}
+
+.wcc-card.collected {
+	color: #4ade80;
+}
+
+.wcc-card.has-dupes {
+	color: #f59e0b;
+}
+
+.wcc-card-star {
+	font-size: 0.78em;
+	font-weight: bold;
+	min-width: 30px;
+	letter-spacing: -0.5px;
+	flex-shrink: 0;
+}
+
+.wcc-card-label {
+	font-size: 0.82em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

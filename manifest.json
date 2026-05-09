@@ -1,11 +1,9 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "world-cup-cards",
+	"name": "World Cup 2026 Cards",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Track your FIFA World Cup 2026 Panini sticker collection.",
+	"author": "Pedro Vallese (Coding Giant Codes)",
 	"isDesktopOnly": false
 }

@@ -1,90 +1,44 @@
-# Obsidian Sample Plugin
+# World Cup 2026 Cards
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+An Obsidian plugin to track your **FIFA World Cup 2026 Panini sticker collection**.
 
-This project uses TypeScript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
+## Features
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open modal (simple)" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
-
-## First time developing plugins?
-
-Quick starting guide for new plugin devs:
-
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
-
-## Releasing new releases
-
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
-
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
-
-## Adding your plugin to the community plugin list
-
-- Check the [plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines).
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
+- **All 994 stickers** from the official Panini FIFA World Cup 2026 album — 48 nations × 20 cards each, plus FIFA/FWC and Coca-Cola special stickers
+- **Organised by World Cup group** (Group A through L) matching the actual 2026 draw
+- **Tap to collect** — tap once to mark a sticker collected, tap again to unmark
+- **Duplicate tracking** — hold any sticker for 500 ms to set how many copies you have; cards with more than one copy show a `[N]` badge
+- **Search** — filter by country name (`argentina`) or card code (`ARG5`, `5`) from a single search bar
+- **Missing / Duplicates filter** — instantly see only the stickers you still need, or only the ones you can trade
+- **Progress bars** at the overall, group, and team level
+- **ASCII terminal style** — monospace font, flat borders, block-character progress bars
+- Data persists automatically inside your Obsidian vault
 
 ## How to use
 
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
+1. Click the **trophy icon** in the left ribbon, or run the command **Open World Cup 2026 Cards**.
+2. Expand a group, then a team to see its stickers.
+3. **Tap** a sticker to toggle collected / uncollected.
+4. **Hold** a sticker to enter an exact count (useful for duplicates).
+5. Use the **search bar** to jump straight to a country or a specific card number.
+6. Use the **MISSING** filter to see what you still need, or **DUPLICATES** to see what you can trade.
 
-## Manually installing the plugin
+## Manual installation
 
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
+1. Download `main.js`, `styles.css`, and `manifest.json` from the [latest release](../../releases/latest).
+2. Copy them into `<your vault>/.obsidian/plugins/world-cup-cards/`.
+3. In Obsidian go to **Settings → Community plugins**, disable Restricted mode, and enable **World Cup 2026 Cards**.
 
-## Improve code quality with eslint
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- This project already has eslint preconfigured, you can invoke a check by running`npm run lint`
-- Together with a custom eslint [plugin](https://github.com/obsidianmd/eslint-plugin) for Obsidan specific code guidelines.
-- A GitHub action is preconfigured to automatically lint every commit on all branches.
+## Development
 
-## Funding URL
-
-You can include funding URLs where people who use your plugin can financially support it.
-
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
-
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
-}
+```bash
+npm install       # install dependencies
+npm run dev       # watch mode — rebuilds on save
+npm run build     # production build
 ```
 
-If you have multiple URLs, you can also do:
+After building, reload the plugin in Obsidian: **Settings → Community plugins → toggle off/on**.
 
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
-```
+## Author
 
-## API Documentation
-
-See https://docs.obsidian.md
+Pedro Vallese (Coding Giant Codes)
