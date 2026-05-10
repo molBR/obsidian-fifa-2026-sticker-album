@@ -27,7 +27,7 @@ export default class WorldCupCardsPlugin extends Plugin {
 			leaf = workspace.getLeaf('tab');
 			await leaf.setViewState({ type: VIEW_TYPE_WCC, active: true });
 		}
-		workspace.revealLeaf(leaf);
+		await workspace.revealLeaf(leaf);
 	}
 
 	async loadPluginData() {

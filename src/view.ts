@@ -67,7 +67,7 @@ export class WorldCupCardsView extends ItemView {
 
 		// ── Header ──────────────────────────────────────────
 		const header = contentEl.createDiv('wcc-header');
-		header.createEl('h2', { text: 'FIFA World Cup 2026 // Cards' });
+		header.createEl('h2', { text: 'FIFA World Cup 2026 // cards' });
 		const overallRow = header.createDiv('wcc-overall-row');
 		overallRow.createSpan({ text: asciiBar(collectedCards, totalCards, 20), cls: 'wcc-ascii-bar' });
 		overallRow.createSpan({ text: ` ${collectedCards}/${totalCards}`, cls: 'wcc-overall-label' });
