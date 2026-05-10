@@ -30,7 +30,7 @@ export class WorldCupCardsView extends ItemView {
 	}
 
 	getViewType() { return VIEW_TYPE_WCC; }
-	getDisplayText() { return 'World Cup 2026 cards'; }
+	getDisplayText() { return 'World cup 2026 cards'; }
 	getIcon() { return 'trophy'; }
 
 	onOpen(): Promise<void> { this.render(); return Promise.resolve(); }

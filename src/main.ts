@@ -9,7 +9,7 @@ export default class WorldCupCardsPlugin extends Plugin {
 
 		this.registerView(VIEW_TYPE_WCC, (leaf) => new WorldCupCardsView(leaf, this));
 
-		this.addRibbonIcon('trophy', 'World Cup 2026 cards', () => {
+		this.addRibbonIcon('trophy', 'World cup 2026 cards', () => {
 			void this.activateView();
 		});
 
